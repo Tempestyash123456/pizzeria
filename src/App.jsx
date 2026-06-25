@@ -4,7 +4,7 @@ import Footer from './components/Footer/Footer.jsx'
 import Home from './pages/Home/Home.jsx'
 import OrderPizza from './pages/OrderPizza/OrderPizza.jsx'
 import BuildPizza from './pages/BuildPizza/BuildPizza.jsx'
-// import Cart from './pages/Cart/Cart.jsx'
+import Cart from './pages/Cart/Cart.jsx'
 import './App.css'
 
 export default function App() {
@@ -16,7 +16,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="order-pizza" element={<OrderPizza />} />
           <Route path="build-pizza" element={<BuildPizza />} />
-          {/* <Route path="cart" element={<Cart />} /> */}
+          <Route path="cart" element={<Cart />} /> 
         </Routes>
       </main>
       <Footer />
