@@ -24,9 +24,13 @@ export default function BuildPizza() {
 
         dispatch(setIngredientsCost(totalCost)); 
 
-        alert(`Your custom pizza has been build! Ingredient cost: ₹${totalCost}`); 
+        alert(`Your custom pizza has been build! Ingredient cost: ₹${totalCost.toFixed(2)}`); 
 
         dispatch(resetBuild()); 
+
+        document.querySelectorAll(".build-pizza__checkbox").forEach((checkbox) => {
+            checkbox.checked = false; 
+        }); 
     }; 
 
     return (
@@ -62,7 +66,7 @@ export default function BuildPizza() {
 
             <div className="build-pizza__footer">
                 <p className="build-pizza__total">
-                    Total Cost : <span>{totalCost}</span>
+                    Total Cost : <span>&#8377;{totalCost.toFixed(2)}</span>
                 </p>
 
                 <button className="build-pizza__btn" onClick={handleBuildPizza}>

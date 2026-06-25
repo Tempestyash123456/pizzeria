@@ -1,0 +1,126 @@
+.build-pizza {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.build-pizza__subtitle {
+  text-align: center;
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.build-pizza__table {
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.build-pizza__row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 16px;
+  border-bottom: 1px solid #eeeeee;
+  background-color: #ffffff;
+  transition: background-color 0.15s ease;
+}
+
+.build-pizza__row:last-child {
+  border-bottom: none;
+}
+
+.build-pizza__row:hover {
+  background-color: #fafafa;
+}
+
+.build-pizza__img-wrap {
+  flex-shrink: 0;
+  width: 60px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.build-pizza__img {
+  width: 58px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+.build-pizza__name {
+  flex: 1;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+.build-pizza__price {
+  font-size: 14px;
+  color: #333;
+  min-width: 70px;
+  text-align: right;
+}
+
+.build-pizza__checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #f5a623;
+  flex-shrink: 0;
+}
+
+.build-pizza__add-label {
+  font-size: 13px;
+  color: #f5a623;
+  font-weight: bold;
+  cursor: pointer;
+  min-width: 30px;
+  user-select: none;
+}
+
+.build-pizza__add-label:hover {
+  color: #e0951a;
+}
+
+.build-pizza__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.build-pizza__total {
+  font-size: 16px;
+  font-weight: bold;
+  color: #f5a623;
+  align-self: flex-start;
+  margin: 0;
+}
+
+.build-pizza__total span {
+  color: #333;
+}
+
+/* ── Build Button ── */
+.build-pizza__btn {
+  background-color: #333333;
+  color: #ffffff;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.build-pizza__btn:hover {
+  background-color: #111111;
+}
