@@ -1,0 +1,104 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1a1a1a;
+    padding: 0 24px;
+    height: 64px;
+    position: sticky;
+    top: 0; 
+    z-index: 1000;
+}
+
+.navbar__brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar__logo-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.navbar__title {
+    color: #fff;
+    font-size: 22px; 
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.navbar__logo-img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover; 
+    border: 2px solid #f5a623;
+}
+
+.navbar__links {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar__link {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.navbar__link:hover {
+    color: #f5a623;
+}
+
+.navbar__cart {
+    display: flex;
+    align-items: center;
+}
+
+.navbar__cart-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+    background-color: #f5a623;
+    color: #1a1a1a;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    position: relative;
+    transition: background-color 0.2s ease;
+}
+
+.navbar__cart-btn:hover {
+    background-color: #e0951a;
+}
+
+.navbar__cart-icon {
+    font-size: 16px;
+}
+
+.navbar__cart-text {
+    white-space: nowrap;
+}
+
+.navbar-cart-badge {
+    background-color: #1a1a1a;
+    color: #f5a623;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: 4px;
+}
