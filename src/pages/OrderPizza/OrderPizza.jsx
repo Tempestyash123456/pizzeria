@@ -1,22 +1,22 @@
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../store/cartSlice.js"; 
+import { addToCart } from "../../store/cartSlice.js";
 import pizzas from "../../data/pizzas.js";
-import "./OrderPizza.css"; 
+import "./OrderPizza.css";
 
-export default function OrderPizza(){
-    const dispatch = useDispatch(); 
+export default function OrderPizza() {
+    const dispatch = useDispatch();
 
     const handleAddToCart = (pizza) => {
         dispatch(
             addToCart({
-                id: pizza.id, 
-                name: pizza.name, 
-                price: Number(pizza.price), 
-                image: pizza.image, 
+                id: pizza.id,
+                name: pizza.name,
+                price: Number(pizza.price),
+                image: pizza.image,
                 type: pizza.type,
             })
         );
-    }; 
+    };
 
     return (
         <div className="order-pizza">
@@ -35,7 +35,9 @@ export default function OrderPizza(){
                             <p className="pizza-card__price">
                                 &#8377;{Number(pizza.price).toFixed(2)}
                             </p>
+                        </div>
 
+                        <div className="pizza-card__middle">
                             <p className="pizza-card__description">{pizza.description}</p>
 
                             <p className="pizza-card__meta">
@@ -47,14 +49,14 @@ export default function OrderPizza(){
                                 <span className="pizza-card__label">Toppings : </span>
                                 {pizza.topping.join(",")}
                             </p>
+                        </div>
 
+
+                        <div className="pizza-card__right">
+                            <img src={pizza.image} alt={pizza.name} className="pizza-card__img" onError={(e) => { e.target.src = "https://via.placeholder.com/150x150?text=Pizza"; }} />
                             <button className="pizza-card__btn" onClick={() => handleAddToCart(pizza)}>
                                 Add to Cart
                             </button>
-                        </div>
-
-                        <div className="pizza-card__right">
-                            <img src={pizza.image} alt={pizza.name} className="pizza-card__img" onError={(e) => {e.target.src = "https://via.placeholder.com/150x150?text=Pizza";}}/>
                         </div>
                     </div>
                 ))}
