@@ -43,7 +43,7 @@ const ingredients =
 
         "price": 50,
 
-        "image": "https://thumb7.shutterstock.com/display_pic_with_logo/137002/244097551/stock-photo-black-cut-olive-rings-isolated-on-white-244097551.jpg"
+        "image": "https://thumbs.dreamstime.com/b/black-olive-slices-isolated-white-background-full-depth-field-274794566.jpg"
 
     },
 
