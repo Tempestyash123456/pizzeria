@@ -37,7 +37,7 @@ export default function Home() {
 
             <section className="home__section home__section-ingredients">
                 <div className="home__section-img">
-                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500" alt="Fresh ingredients" className="home__img"/>
+                    <img src="https://media.istockphoto.com/id/1155240408/photo/table-filled-with-large-variety-of-food.jpg?s=1024x1024&w=is&k=20&c=y-Lbco14g-CbkNKEaNId872h0XaYxtiRWwrh35aAAOk=" alt="Fresh ingredients" className="home__img"/>
                 </div>
 
                 <div className="home__section-content">
@@ -71,13 +71,13 @@ export default function Home() {
                 </div>
 
                 <div className="home__section-img">
-                    <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=500" alt="Our Chefs" className="home__img"/>
+                    <img src="https://static.vecteezy.com/system/resources/previews/033/692/644/non_2x/chef-preparing-food-in-the-kitchen-at-the-restaurant-professional-chef-cooking-gourmet-chef-cooking-in-a-commercial-kitchen-ai-generated-free-photo.jpg" alt="Our Chefs" className="home__img"/>
                 </div>
             </section>
 
             <section className="home__section home__section-delivery">
                 <div className="home__section-img">
-                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400" alt="45 minute delivery" className="home__img home__img-delivery"/>
+                    <img src="https://www.shutterstock.com/image-vector/45-min-clock-stopwatch-isolated-600w-2563065869.jpg" alt="45 minute delivery" className="home__img home__img-delivery"/>
                 </div>
 
                 <div className="home__section-content">
