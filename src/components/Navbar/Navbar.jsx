@@ -26,7 +26,7 @@ export default function Navbar() {
 
                 <li>
                     <Link to="/build-pizza" className="navbar__link">
-                        Build Your Pizza
+                        Build Ur Pizza
                     </Link>
                 </li>
             </ul>

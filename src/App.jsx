@@ -5,6 +5,7 @@ import Home from './pages/Home/Home.jsx'
 import OrderPizza from './pages/OrderPizza/OrderPizza.jsx'
 import BuildPizza from './pages/BuildPizza/BuildPizza.jsx'
 import Cart from './pages/Cart/Cart.jsx'
+import Toast from './components/Toast/Toast.jsx'
 import './App.css'
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      <Toast />
     </div>
   );
 }
