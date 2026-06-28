@@ -62,11 +62,10 @@ export default function Home() {
                     </h3>
 
                     <p className="home__section-text">
-                        We&apos;re ruthless about goodness. We have no qualms about tearing
-                        up a day-old lettuce leaf (straight from the farm), or steaming a
-                        baby carrot. Cut. Chop. Steam. Steam. Stir. Stir. While they&apos;re
-                        still young and fresh - that&apos;s our motto. It makes the kitchen
-                        a better place.
+                        They make bacon sing and salads dance. They create magic with
+                        skill, knowledge, passion, and stirring spoons (among other
+                        things). They make goodness so good, it doesn&apos;t know what to
+                        do with itself. We do though. We send it to you.
                     </p>
                 </div>
 

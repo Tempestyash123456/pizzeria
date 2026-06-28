@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { toggleIngredient, resetBuild } from "../../store/buildPizzaSlice.js";
-import { setIngredientsCost } from "../../store/cartSlice.js";
+import { setIngredientsCost, setIngredients } from "../../store/cartSlice.js";
 import { useToast } from "../../context/ToastContext.jsx";
 import ingredients from "../../data/ingredients.js";
 import "./BuildPizza.css";
@@ -25,6 +25,7 @@ function BuildPizza() {
       return;
     }
     dispatch(setIngredientsCost(totalCost));
+    dispatch(setIngredients(selectedIngredients));
     showToast(
       `Ingredients have been added to the cart! Total Cost: ₹${totalCost}`,
       "success"

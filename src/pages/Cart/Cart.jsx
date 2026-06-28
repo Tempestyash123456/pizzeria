@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   increaseQuantity,
@@ -11,7 +12,8 @@ import "./Cart.css";
 function Cart() {
   const dispatch = useDispatch();
   const { showToast } = useToast();
-  const { items, ingredientsCost } = useSelector((state) => state.cart);
+  const { items, ingredientsCost, ingredients } = useSelector((state) => state.cart);
+  const [showIngredients, setShowIngredients] = useState(false);
 
   const pizzaSubTotal = items.reduce(
     (sum, item) => sum + Number(item.price) * item.quantity,
@@ -29,7 +31,11 @@ function Cart() {
 
   const handlePay = () => {
     if (items.length === 0) {
-      showToast("Your cart is empty!", "error");
+      if (ingredients && ingredients.length > 0) {
+        showToast("Only ingredients can't be purchased, you need to add atleast one pizza", "error");
+      } else {
+        showToast("Your cart is empty!", "error");
+      }
       return;
     }
     showToast(
@@ -40,7 +46,7 @@ function Cart() {
   };
 
   const handleClear = () => {
-    if (items.length === 0) {
+    if (items.length === 0 && (!ingredients || ingredients.length === 0)) {
       showToast("Cart is already empty!", "info");
       return;
     }
@@ -55,7 +61,11 @@ function Cart() {
         <div className="cart__left">
           <h2 className="cart__heading">My Cart</h2>
           {items.length === 0 ? (
-            <p className="cart__empty">Your cart is empty.</p>
+            <p className="cart__empty">
+              {(!ingredients || ingredients.length === 0) 
+                ? "Your cart is empty." 
+                : "You haven't added any pizzas yet."}
+            </p>
           ) : (
             <>
               {items.map((item) => (
@@ -132,11 +142,32 @@ function Cart() {
               </span>
             </div>
             <div className="cart__summary-row">
-              <span className="cart__summary-label">Ingredients&#8964;</span>
+              <span className="cart__summary-label">
+                Ingredients
+                {ingredients && ingredients.length > 0 && (
+                  <button 
+                    className="cart__summary-dropdown-btn"
+                    onClick={() => setShowIngredients(!showIngredients)}
+                    title="View selected ingredients"
+                  >
+                    {showIngredients ? '▲' : '▼'}
+                  </button>
+                )}
+              </span>
               <span className="cart__summary-value">
                 &#8377;{ingredientsCost.toFixed(2)}
               </span>
             </div>
+            {showIngredients && ingredients && ingredients.length > 0 && (
+              <div className="cart__ingredients-dropdown">
+                {ingredients.map(ing => (
+                  <div key={ing.id} className="cart__ingredient-item">
+                    <span>{ing.tname}</span>
+                    <span>&#8377;{ing.price.toFixed(2)}</span>
+                  </div>
+                ))}
+              </div>
+            )}
             <div className="cart__summary-divider"></div>
             <div className="cart__summary-total-row">
               <span className="cart__summary-total-label">Total :</span>

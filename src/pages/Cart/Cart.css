@@ -213,6 +213,45 @@
 
 .cart__summary-label {
   color: #555;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart__summary-dropdown-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 10px;
+  color: #888;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.cart__summary-dropdown-btn:hover {
+  color: #333;
+}
+
+.cart__ingredients-dropdown {
+  background-color: #f9f9f9;
+  border: 1px solid #eeeeee;
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-top: -8px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cart__ingredient-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #666;
 }
 
 .cart__summary-value {

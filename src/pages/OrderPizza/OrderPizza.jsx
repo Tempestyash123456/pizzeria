@@ -1,10 +1,12 @@
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../store/cartSlice.js";
 import pizzas from "../../data/pizzas.js";
+import { useToast } from "../../context/ToastContext.jsx";
 import "./OrderPizza.css";
 
 export default function OrderPizza() {
     const dispatch = useDispatch();
+    const { showToast } = useToast();
 
     const handleAddToCart = (pizza) => {
         dispatch(
@@ -16,6 +18,7 @@ export default function OrderPizza() {
                 type: pizza.type,
             })
         );
+        showToast(`${pizza.name} added to cart!`, "success");
     };
 
     return (
