@@ -4,11 +4,12 @@
     justify-content: flex-start;
     background-color: #1a1a1a;
     padding: 0 24px;
-    height: 64px;
+    height: 70px;
     position: sticky;
     top: 0; 
     z-index: 1000;
     gap: 32px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .navbar__brand {
@@ -19,24 +20,28 @@
 .navbar__logo-link {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     text-decoration: none;
 }
 
 .navbar__title {
     color: #fff;
-    font-size: 22px; 
-    font-weight: bold;
-    letter-spacing: 1px;
+    font-size: 24px; 
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 .navbar__logo-img {
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     object-fit: cover; 
     border: 2px solid #f5a623;
+    box-shadow: 0 0 8px rgba(245, 166, 35, 0.4);
+    transition: var(--transition-smooth);
 }
+
+
 
 .navbar__links {
     display: flex;
@@ -50,9 +55,10 @@
 .navbar__link {
     color: #cccccc;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
-    transition: color 0.2s ease;
+    position: relative;
+    transition: var(--transition-smooth);
 }
 
 .navbar__link:hover {
@@ -70,21 +76,22 @@
     gap: 8px; 
     background-color: #f5a623;
     color: #1a1a1a;
-    padding: 8px 16px;
-    border-radius: 4px;
+    padding: 10px 18px;
+    border-radius: var(--radius-md);
     text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 15px;
+    font-weight: 700;
     position: relative;
-    transition: background-color 0.2s ease;
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-soft);
 }
 
 .navbar__cart-btn:hover {
-    background-color: #e0951a;
+    box-shadow: var(--shadow-hover);
 }
 
 .navbar__cart-icon {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .navbar__cart-text {
@@ -95,12 +102,13 @@
     background-color: #1a1a1a;
     color: #f5a623;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 11px;
-    font-weight: bold;
+    font-size: 12px;
+    font-weight: 700;
     margin-left: 4px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
 }
