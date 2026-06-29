@@ -15,11 +15,19 @@ function Cart() {
   const { items, ingredientsCost, ingredients } = useSelector((state) => state.cart);
   const [showIngredients, setShowIngredients] = useState(false);
 
-  const pizzaSubTotal = items.reduce(
+  const pizzaOnlySubTotal = items.reduce(
     (sum, item) => sum + Number(item.price) * item.quantity,
     0
   );
-  const grandTotal = pizzaSubTotal + ingredientsCost;
+
+  const itemIngredientsTotal = items.reduce(
+    (sum, item) => sum + (item.ingredientsCost || 0) * item.quantity,
+    0
+  );
+
+  const pizzaSubTotal = pizzaOnlySubTotal + itemIngredientsTotal;
+  const displayIngredientsCost = ingredientsCost + itemIngredientsTotal;
+  const grandTotal = pizzaOnlySubTotal + displayIngredientsCost;
 
   const handleIncrease = (id) => dispatch(increaseQuantity(id));
   const handleDecrease = (id) => dispatch(decreaseQuantity(id));
@@ -92,6 +100,13 @@ function Cart() {
                     <p className="cart__item-unit">
                       &#8377;{Number(item.price).toFixed(0)}
                     </p>
+                    {item.ingredients && item.ingredients.length > 0 && (
+                      <div className="cart__item-ingredients">
+                        <small style={{ color: "#777" }}>
+                          + {item.ingredients.map(i => i.tname).join(", ")} (&#8377;{item.ingredientsCost.toFixed(2)})
+                        </small>
+                      </div>
+                    )}
                   </div>
 
                   <div className="cart__item-controls">
@@ -112,7 +127,7 @@ function Cart() {
 
                   <span className="cart__item-total">
                     &#8377;
-                    {(Number(item.price) * item.quantity).toFixed(2)}
+                    {((Number(item.price) + (item.ingredientsCost || 0)) * item.quantity).toFixed(2)}
                   </span>
 
                   <button
@@ -138,7 +153,7 @@ function Cart() {
             <div className="cart__summary-row">
               <span className="cart__summary-label">Pizza</span>
               <span className="cart__summary-value">
-                &#8377;{pizzaSubTotal.toFixed(2)}
+                &#8377;{pizzaOnlySubTotal.toFixed(2)}
               </span>
             </div>
             <div className="cart__summary-row">
@@ -155,7 +170,7 @@ function Cart() {
                 )}
               </span>
               <span className="cart__summary-value">
-                &#8377;{ingredientsCost.toFixed(2)}
+                &#8377;{displayIngredientsCost.toFixed(2)}
               </span>
             </div>
             {showIngredients && ingredients && ingredients.length > 0 && (

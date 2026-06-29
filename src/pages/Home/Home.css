@@ -102,3 +102,33 @@
 .home__section-chefs .home__section-content {
     order: 1; 
 }
+
+@media (max-width: 768px) {
+    .home__section {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+    }
+    .home__section-img {
+        flex: none;
+        width: 100%;
+    }
+    .home__section-chefs .home__section-img {
+        order: -1;
+    }
+    .home__section-chefs .home__section-content {
+        order: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .home__story {
+        padding: 24px;
+    }
+    .home__story-title {
+        font-size: 24px;
+    }
+    .home__section {
+        padding: 24px 16px;
+    }
+}

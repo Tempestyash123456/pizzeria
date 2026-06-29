@@ -154,3 +154,33 @@
 .pizza-card__btn:hover {
   box-shadow: var(--shadow-hover);
 }
+
+@media (max-width: 768px) {
+  .order-pizza__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .pizza-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .pizza-card__left {
+    flex: none;
+    align-items: center;
+  }
+  .pizza-card__middle {
+    border-left: none;
+    border-right: none;
+    border-top: 1px dashed #eeeeee;
+    border-bottom: 1px dashed #eeeeee;
+    padding: 12px 0;
+  }
+  .pizza-card__right {
+    flex: none;
+  }
+  .pizza-card__header {
+    justify-content: center;
+  }
+}

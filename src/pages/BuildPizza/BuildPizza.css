@@ -131,3 +131,98 @@
 .build-pizza__btn:hover {
   box-shadow: var(--shadow-hover);
 }
+
+.build-pizza__select-pizza {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.build-pizza__select-pizza label {
+  font-weight: 600;
+  color: #333;
+}
+
+.build-pizza__dropdown {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  background-color: #fff;
+  cursor: pointer;
+  min-width: 200px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.build-pizza__dropdown:focus {
+  border-color: #f5a623;
+}
+
+@media (max-width: 768px) {
+  .build-pizza {
+    padding: 30px 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .build-pizza {
+    padding: 20px 12px;
+  }
+
+  .build-pizza__subtitle {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .build-pizza__select-pizza {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .build-pizza__dropdown {
+    width: 100%;
+  }
+
+  .build-pizza__row {
+    padding: 12px 12px;
+    gap: 12px;
+  }
+
+  .build-pizza__img-wrap {
+    width: 50px;
+    height: 44px;
+  }
+
+  .build-pizza__img {
+    width: 48px;
+    height: 40px;
+  }
+
+  .build-pizza__name {
+    font-size: 14px;
+  }
+
+  .build-pizza__price {
+    font-size: 14px;
+    min-width: 50px;
+  }
+
+  .build-pizza__add-label {
+    font-size: 13px;
+    min-width: 24px;
+  }
+
+  .build-pizza__total {
+    font-size: 16px;
+    align-self: center;
+  }
+
+  .build-pizza__btn {
+    width: 100%;
+    padding: 12px 24px;
+  }
+}

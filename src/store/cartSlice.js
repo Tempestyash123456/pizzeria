@@ -53,6 +53,15 @@ const cartSlice = createSlice({
         setIngredients(state, action){
             state.ingredients = action.payload;
         },
+        addCustomizationToItem(state, action) {
+            const { pizzaId, ingredients, cost } = action.payload;
+            const item = state.items.find((item) => item.id === pizzaId);
+            if (item) {
+                if (!item.ingredients) item.ingredients = [];
+                item.ingredients = [...item.ingredients, ...ingredients];
+                item.ingredientsCost = (item.ingredientsCost || 0) + cost;
+            }
+        },
     },
 });
 
@@ -64,6 +73,7 @@ export const {
     clearCart, 
     setIngredientsCost,
     setIngredients,
+    addCustomizationToItem,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;
