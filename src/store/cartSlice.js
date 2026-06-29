@@ -50,9 +50,11 @@ const cartSlice = createSlice({
         setIngredientsCost(state, action){
             state.ingredientsCost = action.payload;
         },
+
         setIngredients(state, action){
             state.ingredients = action.payload;
         },
+        
         addCustomizationToItem(state, action) {
             const { pizzaId, ingredients, cost } = action.payload;
             const item = state.items.find((item) => item.id === pizzaId);
