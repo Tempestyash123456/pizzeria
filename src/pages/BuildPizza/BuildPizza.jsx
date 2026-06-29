@@ -101,7 +101,7 @@ function BuildPizza() {
                 className="build-pizza__img"
                 onError={(e) => {
                   e.target.src =
-                    "https://via.placeholder.com/60x60?text=Ing";
+                    "https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg?w=2000";
                 }}
               />
             </div>

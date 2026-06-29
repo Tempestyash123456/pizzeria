@@ -56,7 +56,7 @@ export default function OrderPizza() {
 
 
                         <div className="pizza-card__right">
-                            <img src={pizza.image} alt={pizza.name} className="pizza-card__img" onError={(e) => { e.target.src = "https://via.placeholder.com/150x150?text=Pizza"; }} />
+                            <img src={pizza.image} alt={pizza.name} className="pizza-card__img" onError={(e) => { e.target.src = "https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg?w=2000"; }} />
                             <button className="pizza-card__btn" onClick={() => handleAddToCart(pizza)}>
                                 Add to Cart
                             </button>
